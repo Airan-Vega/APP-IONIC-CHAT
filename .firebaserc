@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "app-ionic-chat-35d85": {
+      "hosting": {
+        "app": [
+          "app-ionic-chat-35d85"
+        ]
+      }
+    }
+  }
+}

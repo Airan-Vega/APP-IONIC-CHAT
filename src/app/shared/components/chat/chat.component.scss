@@ -1,0 +1,54 @@
+ion-content {
+  --background: #dae1e4;
+}
+
+.backButton {
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin-bottom: 4px;
+  white-space: pre-wrap;
+}
+
+.other-message {
+  background: #ffffff;
+  color: #000000;
+}
+
+.my-message {
+  background: #000000;
+  color: #ffffff;
+}
+
+.time {
+  color: #00bb2d;
+  float: right;
+  font-size: small;
+}
+
+.message-input {
+  width: 100%;
+  border: 1px solid var(--ion-color-medium);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background: #ffffff;
+  resize: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.msg-btn {
+  --padding-start: 0.5em;
+  --webkit-padding-end: 0.5em;
+}

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-button slot="start" fill="clear" (click)="closeChat()">
+      <ion-icon name="arrow-back-circle-outline" class="backButton"></ion-icon>
+    </ion-button>
+    <ion-title>{{ chat.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let contentChat of contentsChat">
+      <ion-col
+        offset="3"
+        size="9"
+        *ngIf="contentChat.uidUser !== uid"
+        class="message other-message"
+      >
+        {{ contentChat.content }}
+        <div class="time">
+          <br />
+          {{ contentChat.date.toMillis() | date: "dd/MM/yyyy h:mm:ss a" }}
+        </div>
+      </ion-col>
+      <ion-col
+        size="9"
+        *ngIf="contentChat.uidUser === uid"
+        class="message my-message"
+      >
+        {{ contentChat.content }}
+        <div class="time">
+          <br />
+          {{ contentChat.date.toMillis() | date: "dd/MM/yyyy h:mm:ss a" }}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-row class="ion-align-items-center ion-no-padding">
+      <ion-col size="10">
+        <ion-textarea
+          autosize
+          maxRows="4"
+          [(ngModel)]="msg"
+          class="message-input"
+        ></ion-textarea>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button
+          expand="block"
+          fill="clear"
+          color="primary"
+          [disabled]="msg === ''"
+          class="msg-btn"
+          (click)="sendMessage()"
+        >
+          <ion-icon name="send"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

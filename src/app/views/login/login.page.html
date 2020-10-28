@@ -1,0 +1,26 @@
+<ion-content class="ion-padding">
+  <img
+    class="icon"
+    src="../../../assets/images/login.png"
+    alt="chat messages"
+  />
+  <ion-item>
+    <ion-label position="floating">email</ion-label>
+    <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">password</ion-label>
+    <ion-input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+    ></ion-input>
+  </ion-item>
+  <br />
+
+  <ion-button expand="block" (click)="loginEmailPassword()">Enter</ion-button>
+  <br />
+
+  <p class="textRegister" routerLink="/register">Create Account</p>
+</ion-content>

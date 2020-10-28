@@ -1,0 +1,48 @@
+<ion-content class="ion-padding">
+  <img
+    class="icon"
+    src="../../../assets/images/register.png"
+    alt="chat messages"
+  />
+
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input type="text" name="name" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Last Names</ion-label>
+    <ion-input type="text" name="lastNames" [(ngModel)]="lastNames"></ion-input>
+  </ion-item>
+  <br />
+
+  <ion-item>
+    <ion-label position="floating">Telephone</ion-label>
+    <ion-input
+      type="number"
+      name="telephone"
+      [(ngModel)]="telephone"
+    ></ion-input>
+  </ion-item>
+  <br />
+
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  <br />
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+    ></ion-input>
+  </ion-item>
+  <br />
+
+  <ion-button expand="block" (click)="registerUser()">Register</ion-button>
+  <br />
+
+  <p class="textLogin" routerLink="/login">I already have an account</p>
+</ion-content>
