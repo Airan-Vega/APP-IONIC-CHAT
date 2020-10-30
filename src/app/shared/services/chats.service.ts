@@ -13,7 +13,7 @@ import { MessageI } from "../models/message";
 export class ChatsService {
   constructor(private angularFirestore: AngularFirestore) {}
 
-  //We return a collection of data from the firebase database and observe changes in real time
+  //It return the chat collection from the database and observe changes in real time
   public getChats(): Observable<ChatI[]> {
     return this.angularFirestore
       .collection("chats")
@@ -29,12 +29,13 @@ export class ChatsService {
       );
   }
 
-  //We return a single document from the firewall database, select the document by ID and observe
+  //It return a single document from the firebase database, select the document by ID and observe
   //changes to the document in real time
   public getChat(chatID: string): Observable<any> {
     return this.angularFirestore.collection("chats").doc(chatID).valueChanges();
   }
 
+  //The messages that are sent are stored in the database
   public sendMessageFirebase(message: MessageI, chatID: string) {
     this.angularFirestore
       .collection("chats")

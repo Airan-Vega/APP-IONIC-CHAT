@@ -18,10 +18,11 @@ export class AuthService {
     private router: Router,
     private angularFirestore: AngularFirestore
   ) {
-    //Save the data of the user who is currently logged in
+    //It save the data of the user who is currently logged in
     this.userData = angularFireAuth.authState;
   }
 
+  //User login
   public login(email: string, password: string): Promise<any> {
     return new Promise((resolve, rejected) => {
       this.angularFireAuth
@@ -31,12 +32,14 @@ export class AuthService {
     });
   }
 
+  //It close the user's session
   public logOut() {
     this.angularFireAuth.signOut().then(() => {
       this.router.navigate(["/login"]);
     });
   }
 
+  //It register the user and save their data in a collection in the firebase database
   public register(
     name: string,
     lastNames: string,

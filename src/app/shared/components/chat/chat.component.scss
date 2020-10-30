@@ -16,6 +16,16 @@ ion-content {
   -o-border-radius: 10px;
   margin-bottom: 4px;
   white-space: pre-wrap;
+
+  .flexContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .time {
+    color: #00bb2d;
+    float: right;
+    font-size: small;
+  }
 }
 
 .other-message {
@@ -26,12 +36,6 @@ ion-content {
 .my-message {
   background: #000000;
   color: #ffffff;
-}
-
-.time {
-  color: #00bb2d;
-  float: right;
-  font-size: small;
 }
 
 .message-input {

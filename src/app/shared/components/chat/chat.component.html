@@ -9,16 +9,30 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row *ngFor="let contentChat of contentsChat">
+    <ion-row *ngFor="let contentChat of contentsChat; trackBy: trackByFn">
       <ion-col
         offset="3"
         size="9"
         *ngIf="contentChat.uidUser !== uid"
         class="message other-message"
       >
-        {{ contentChat.content }}
+        <div class="flexContainer">
+          <div>
+            <ion-icon name="person-outline"></ion-icon>
+            {{ contentChat.nameUser }}
+          </div>
+          <div>
+            <ion-icon name="call-outline"></ion-icon>
+            {{ contentChat.telephoneUser }}
+          </div>
+          <div>
+            <ion-icon name="chatbox-outline"></ion-icon>
+            {{ contentChat.content }}
+          </div>
+        </div>
         <div class="time">
           <br />
+          <ion-icon name="hourglass-outline"></ion-icon>
           {{ contentChat.date.toMillis() | date: "dd/MM/yyyy h:mm:ss a" }}
         </div>
       </ion-col>
@@ -27,9 +41,23 @@
         *ngIf="contentChat.uidUser === uid"
         class="message my-message"
       >
-        {{ contentChat.content }}
+        <div class="flexContainer">
+          <div>
+            <ion-icon name="person-outline"></ion-icon>
+            {{ contentChat.nameUser }}
+          </div>
+          <div>
+            <ion-icon name="call-outline"></ion-icon>
+            {{ contentChat.telephoneUser }}
+          </div>
+          <div>
+            <ion-icon name="chatbox-outline"></ion-icon>
+            {{ contentChat.content }}
+          </div>
+        </div>
         <div class="time">
           <br />
+          <ion-icon name="hourglass-outline"></ion-icon>
           {{ contentChat.date.toMillis() | date: "dd/MM/yyyy h:mm:ss a" }}
         </div>
       </ion-col>
